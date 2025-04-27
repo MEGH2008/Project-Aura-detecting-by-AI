@@ -44,21 +44,21 @@ This interdisciplinary approach connects modern accelerator science with the tra
 
 ### 2.1.1 Beam Halo Formation
 
-Beam halos primarily originate from **Multiple Coulomb Scattering (MCS)** where charged particles interact electromagnetically with the nuclei and electrons of materials like thin foils or collimators. MCS causes particles to deviate from their original path, forming a diffuse halo. The root-mean-square (RMS) scattering angle, `$ \theta_0 $`, is given by the Highland formula:
+Beam halos primarily originate from **Multiple Coulomb Scattering (MCS)** where charged particles interact electromagnetically with the nuclei and electrons of materials like thin foils or collimators. MCS causes particles to deviate from their original path, forming a diffuse halo. The root-mean-square (RMS) scattering angle, $ \theta_0 $, is given by the Highland formula:
 
 When a beam hits thin foils or internal collimators, some particles are deflected at small angles, forming a scattered formation leading to halo creation.
-The root-mean-square (RMS) scattering angle, `$ \theta_0 $`, is approximately given by:
+The root-mean-square (RMS) scattering angle, $ \theta_0 $, is approximately given by:
 
 $$
 \theta_0 \approx \frac{13.6 \text{ MeV}}{\beta pc} \cdot z \cdot \sqrt{\frac{x}{X_0}} \left( 1 + 0.038 \ln{\left(\frac{x}{X_0}\right)} \right) \quad (\text{Eq. 1})
 $$
 
 Where:
-- `$ \beta = \frac{v}{c} $` is the particle’s velocity normalized to the speed of light
-- `$ p $` is the momentum (MeV/c)
-- `$ z $` is the particle’s charge
-- `$ x $` is the thickness of the material
-- `$ X_0 $` is the radiation length of the material
+- $ \beta = \frac{v}{c} $ is the particle’s velocity normalized to the speed of light
+- $ p $ is the momentum (MeV/c)
+- $ z $ is the particle’s charge
+- $ x $ is the thickness of the material
+- $ X_0 $ is the radiation length of the material
 
 This equation shows that the scattering angle depends on the particle type (via `$ \beta, p, z $`) and material properties (`$ x, X_0 $`), leading to distinct halo patterns for different beams and foils.
 
@@ -107,39 +107,40 @@ Specifically, can we:
 
 - **Momentum-Energy Relation** (for mass estimation via ToF and Cherenkov thresholds):
 
-\[
+$$
 E^2 = (pc)^2 + (mc^2)^2 \quad (\text{Eq. 2})
-\]
+$$
 
-Where \( E \) is the total energy, \( p \) is momentum, \( m \) is rest mass, and \( c \) is the speed of light.
+Where $ E $ is the total energy, $ p $ is momentum, $ m $ is rest mass, and $ c $ is the speed of light.
 
 - **Cherenkov Threshold Condition**:
 
-\[
+$$
 \beta > \frac{1}{n} \quad (\text{Eq. 3})
-\]
+$$
 
-Where \( \beta = \frac{v}{c} \) is the particle’s velocity relative to light, and \( n \) is the refractive index of the Cherenkov detector’s gas. Particles faster than this threshold emit light, identifying their type.
+Where $ \beta = \frac{v}{c} $ is the particle’s velocity relative to light, and $ n $ is the refractive index of the Cherenkov detector’s gas. Particles faster than this threshold emit light, identifying their type.
 
 - **Halo Asymmetry Metrics** — used to capture geometric deviation:
 
-\[
+$$
 A_x = \frac{(Q_1 + Q_4) - (Q_2 + Q_3)}{Q_1 + Q_2 + Q_3 + Q_4} \quad (\text{Eq. 4})
-\]
+$$
 
-\[
+$$
 A_y = \frac{(Q_1 + Q_2) - (Q_3 + Q_4)}{Q_1 + Q_2 + Q_3 + Q_4} \quad (\text{Eq. 5})
-\]
+$$
 
-Where \( Q_1, Q_2, Q_3, Q_4 \) are the ADC values from the four halo detector panels, representing particle hit intensities. \( A_x \) and \( A_y \) measure left-right and top-bottom asymmetries.
+
+Where $ Q_1, Q_2, Q_3, Q_4 $ are the ADC values from the four halo detector panels, representing particle hit intensities. $ A_x $ and $ A_y $ measure left-right and top-bottom asymmetries.
 
 - **Time-of-Flight (ToF) Mass Estimation** (from S1 and S2 timing):
 
-\[
+$$
 m = \frac{p}{c} \sqrt{\left(\frac{c \Delta t}{L}\right)^2 - 1} \quad (\text{Eq. 6})
-\]
+$$
 
-Where \( \Delta t \) is time-of-flight, and \( L \) is the distance between S1 and S2 (in cm).
+Where $ \Delta t $ is time-of-flight, and $ L $ is the distance between S1 and S2 (in cm).
 
 ---
 
@@ -201,15 +202,14 @@ The generator can dynamically adjust parameters such as:
 
 ### 3.3.1 Core Particles
 
-The (x, y) positions of core beam particles follow a normal distribution centered at the beam axis:
+The $ (x, y) $ positions of core beam particles follow a normal distribution centered at the beam axis:
 
-\[
+$$
 x_{\mathrm{core}}, y_{\mathrm{core}} \sim \mathcal{N}(0, \sigma_{\mathrm{core}}^2)
 \quad \text{(Eq. 9)}
-\]
+$$
 
-Where:
-- \( \sigma_{\mathrm{core}} \) is the standard deviation of the beam core, controlling its width.
+Where $ \sigma_{\mathrm{core}} $ is the standard deviation of the beam core, controlling its width.
 
 ---
 
@@ -217,21 +217,21 @@ Where:
 
 Halo particles, formed by scattering, are modeled with a radial Cauchy distribution for distance and a uniform angular distribution:
 
-\[
+$$
 r_{\mathrm{halo}} \sim \text{Cauchy}(\gamma); \quad \theta \sim \text{Uniform}(0,2\pi)
 \quad \text{(Eq. 10)}
-\]
+$$
 
 The x and y coordinates of halo particles are calculated from their radial distance and angle:
 
-\[
+$$
 x_{\mathrm{halo}} = r_{\mathrm{halo}}\cos(\theta), \quad y_{\mathrm{halo}} = r_{\mathrm{halo}}\sin(\theta)
 \quad \text{(Eq. 11)}
-\]
+$$
 
 Where:
-- \( \gamma \) controls the spread of the halo, determining how far particles scatter.
-- \( \theta \) is the angle in the x-y plane, uniformly distributed to ensure circular symmetry.
+- $ \gamma $ controls the spread of the halo, determining how far particles scatter.
+- $ \theta $ is the angle in the x-y plane, uniformly distributed to ensure circular symmetry.
 
 ---
 
@@ -239,14 +239,14 @@ Where:
 
 To account for detector imperfections, small Gaussian noise is added to each coordinate:
 
-\[
+$$
 x_{\mathrm{final}} = x + \epsilon_x, \quad y_{\mathrm{final}} = y + \epsilon_y
 \quad \text{(Eq. 12)}
-\]
+$$
 
 Where:
-- \( \epsilon_x, \epsilon_y \sim \mathcal{N}(0, \sigma_{\mathrm{noise}}^2) \) represent independent noise terms.
-- \( \sigma_{\mathrm{noise}} \) is the standard deviation of the noise, reflecting detector resolution limits.
+- $ \epsilon_x, \epsilon_y \sim \mathcal{N}(0, \sigma_{\mathrm{noise}}^2) $ represent independent noise terms.
+- $ \sigma_{\mathrm{noise}} $ is the standard deviation of the noise, reflecting detector resolution limits.
 
 ---
 
@@ -265,10 +265,10 @@ Where:
 
 | Parameter | Description | Typical Values |
 |:----------|:------------|:---------------|
-| Core Standard Deviation \( \sigma_{\mathrm{core}} \) | Width of core beam spread | 1–3 mm |
+| Core Standard Deviation $ \sigma_{\mathrm{core}} $ | Width of core beam spread | 1–3 mm |
 | Halo Intensity | Fraction of halo particles | 5%–15% |
-| Halo Spread \( \gamma \) | Broadness of halo radial distribution | 3–7 mm |
-| Noise Standard Deviation \( \sigma_{\mathrm{noise}} \) | Detector/electronic noise magnitude | 0.1–0.5 mm |
+| Halo Spread $ \gamma $ | Broadness of halo radial distribution | 3–7 mm |
+| Noise Standard Deviation $ \sigma_{\mathrm{noise}} $ | Detector/electronic noise magnitude | 0.1–0.5 mm |
 | Number of Particles | Total number of events per sample | 5,000–50,000 particles |
 
 ---
@@ -360,11 +360,11 @@ All inputs are normalized or standardized during preprocessing.
 
 A custom weighted multi-task loss:
 
-\[
+$$
 \mathcal{L}_{\text{total}} = \lambda_1 \mathcal{L}_{\text{composition}} + \lambda_2 \mathcal{L}_{\text{energy}} + \lambda_3 \mathcal{L}_{\text{stability}} + \lambda_4 \mathcal{L}_{\text{halo-shape}}
-\]
+$$
 
-Weights \( \lambda_i \) are adjustable to prioritize specific tasks.
+Weights $ \lambda_i $ are adjustable to prioritize specific tasks.
 
 ---
 
