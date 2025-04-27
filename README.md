@@ -54,7 +54,7 @@ $$
 $$
 
 Where:
-- $\beta = \frac{v}{c}$ is the particle’s velocity normalized to the speed of light
+- $\beta = \frac{v}{c}$ is the particle’s velocity normalised to the speed of light
 - $p$ is the momentum (MeV/c)
 - $z$ is the particle’s charge
 - $x$ is the thickness of the material
@@ -99,7 +99,7 @@ Specifically, can we:
 | **Task 1** | Beam Composition Classification | Use halo quadrant asymmetries + PID detectors (Cherenkov, ToF, Calorimeter) to classify particle types. |
 | **Task 2** | Beam Energy Regression | Correlate energy with angular spread and calorimeter response. |
 | **Task 3** | Beam Stability Analysis | Track time-series variance in halo signals across spills to detect instability. |
-| **Task 4** | Halo Shape Classification | Cluster events based on quadrant signal ratios to categorize shape profiles (symmetric, skewed, diffuse). |
+| **Task 4** | Halo Shape Classification | Cluster events based on quadrant signal ratios to categorise shape profiles (symmetric, skewed, diffuse). |
 
 ---
 
@@ -168,7 +168,7 @@ This approach allows us to:
 
 - Create labelled datasets that mimic expected detector readings.
 - Introduce controlled noise and beam variations to test model robustness.
-- Ensure that our ML models can generalize to real-world beamline data.
+- Ensure that our ML models can generalise to real-world beamline data.
 
 ---
 
@@ -183,7 +183,7 @@ Particles forming the main Gaussian-shaped core of the beam are generated accord
 Particles belonging to the beam halo are generated with a different radial distribution — typically broader and heavier-tailed — to mimic the halo effect caused by scattering or beam instabilities.
 
 - **Noise Addition**:  
-Random electronic or detector noise is added to simulate realistic imperfect readings.
+Random electronic or detector noise is added to simulate realistic, imperfect readings.
 
 - **Label Assignment**:  
 Each generated point is labeled either as:
@@ -202,7 +202,7 @@ The generator can dynamically adjust parameters such as:
 
 ### 3.3.1 Core Particles
 
-The (x, y) positions of core beam particles follow a normal distribution centered at the beam axis:
+The (x, y) positions of core beam particles follow a normal distribution centred at the beam axis:
 
 $$
 x_{\mathrm{core}}, y_{\mathrm{core}} \sim \mathcal{N}(0, \sigma_{\mathrm{core}}^2)
@@ -337,7 +337,7 @@ Inputs are grouped by detector and role:
   - Energy deposition  
   - Used to distinguish EM vs. hadronic events
 
-All inputs are normalized or standardized during preprocessing.
+All inputs are normalised or standardised during preprocessing.
 
 ---
 
@@ -355,16 +355,6 @@ All inputs are normalized or standardized during preprocessing.
   - Linear (regression)
   - Sigmoid (binary stability if needed)
   - Softmax (shape classification)
-
-### Loss Function
-
-A custom weighted multi-task loss:
-
-$$
-\mathcal{L}_{\text{total}} = \lambda_1 \mathcal{L}_{\text{composition}} + \lambda_2 \mathcal{L}_{\text{energy}} + \lambda_3 \mathcal{L}_{\text{stability}} + \lambda_4 \mathcal{L}_{\text{halo-shape}}
-$$
-
-Weights $\lambda_i$ are adjustable to prioritize specific tasks.
 
 ---
 
@@ -384,9 +374,8 @@ Each forward pass produces:
 - A vector of composition probabilities  
 - Regression values: [mean energy, x-offset, y-offset, beam spread X, beam spread Y]  
 - Stability score or label  
-- Halo shape class
 
-These outputs can be analyzed individually or combined into a single dashboard/report.
+These outputs can be analysed individually or combined into a single dashboard/report.
 
 ---
 
@@ -396,13 +385,13 @@ These outputs can be analyzed individually or combined into a single dashboard/r
 - **Losses:** Categorical CrossEntropy, MSE, Binary CrossEntropy  
 - **Metrics:** Accuracy, MAE, R², Confusion Matrix, ROC AUC
 
-Model training is logged and results are saved per task.  
+Model training is logged, and results are saved per task.  
 
 ---
 
 ## 4.8 Flexibility
 
-This model is designed in a modular way and can be adapted to Add new tasks & functions(e.g., anomaly detection, beam spill classification)
+This model is designed in a modular way and can be adapted to add new tasks & functions(e.g., anomaly detection, beam spill classification)
 
 ---
 
@@ -423,16 +412,16 @@ Coming soon ...
 | **Tracking Detector Failure (DWC1–4)** | Loss of fine particle trajectory measurements | Focus on Time-of-Flight (ToF) and Cherenkov PID features. Use S1–S2 timing, halo asymmetries, and CALO signals to proceed with composition classification (Task 1) and halo-based tasks (Task 4). |
 | **Halo Detector Malfunction (Partial or Complete)** | Loss of direct halo quadrant signals | Shift emphasis to DWC scattering angles and Cherenkov PID for classification. If needed, reframe Tasks 1 & 2 around core beam parameters only. |
 | **S1 or S2 Scintillator Failure** | Loss of trigger and/or ToF measurement | Use only tracking and PID detectors for event reconstruction. Rely on Halo Quadrants + DWC angular spread for analysis. |
-| **Cherenkov Detector Failure (C1 or C2)** | Incomplete PID (Particle ID) | Reinforce classification models using ToF and calorimeter features. Compensate particle separation loss through halo asymmetry patterns if statistically viable. |
+| **Cherenkov Detector Failure (C1 or C2)** | Incomplete PID (Particle ID) | Reinforce classification models using ToF and calorimeter features. Compensate for particle separation loss through halo asymmetry patterns if statistically viable. |
 | **Beam Composition Unexpected** | Different mixture than assumed (e.g., wrong proton/electron ratios) | Retrain machine learning models on early collected data. Adjust experimental goals dynamically to focus on available particle types. |
-| **Beam Energy Instability or Low Statistics** | Reduced event quality and statistical power | Prioritize data collection for baseline runs (no foil, standard beam) and carbon foil runs first. Limit variations to maximize usable datasets for Tasks 1 and 2. |
+| **Beam Energy Instability or Low Statistics** | Reduced event quality and statistical power | Prioritise data collection for baseline runs (no foil, standard beam) and carbon foil runs first. Limit variations to maximise usable datasets for Tasks 1 and 2. |
 | **DAQ Issues or Synchronization Problems** | Incomplete datasets or timing errors | Use redundant signals (S1 and Halo hits) to validate events. Perform offline corrections if timing skew is systematic. |
-| **Beam Alignment Offsets** | Beam shifted from center, affecting halo symmetry | Correct for beam offsets offline during data reconstruction. If impossible, use relative quadrant differences instead of absolute patterns. |
+| **Beam Alignment Offsets** | Beam shifted from centre, affecting halo symmetry | Correct for beam offsets offline during data reconstruction. If impossible, use relative quadrant differences instead of absolute patterns. |
 | **Magnet (if requested) Not Available** | No direct momentum measurement | Focus on relative energy spread via halo width and calorimeter response instead of exact momentum estimation. Omit magnet-based tasks if necessary. |
 | **Limited Beamtime or Interruptions** | Fewer datasets than planned | Strict run prioritization:  
   1. Baseline runs (no foil)  
   2. Carbon foil runs  
-  3. Aluminum foil runs  
+  3. Aluminium foil runs  
   4. Copper foil or collimator runs  
 Only attempt different energies if main conditions are satisfied. |
 
@@ -440,9 +429,9 @@ Only attempt different energies if main conditions are satisfied. |
 
 ## 6.2 Strategy
 
-- **Prioritize critical physics goals** first (Tasks 1 and 4: composition classification and halo pattern recognition).
+- **Prioritise critical physics goals** first (Tasks 1 and 4: composition classification and halo pattern recognition).
 - **Remain flexible**: focus dynamically on the most robust detectors available at any time.
-- **Minimize dependence** on heavily correlated multi-detector events if failures occur.
+- **Minimise dependence** on heavily correlated multi-detector events if failures occur.
 
 ---
 
