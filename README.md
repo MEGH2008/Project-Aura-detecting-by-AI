@@ -44,24 +44,23 @@ This interdisciplinary approach connects modern accelerator science with the tra
 
 ### 2.1.1 Beam Halo Formation
 
-Beam halos primarily originate from **Multiple Coulomb Scattering (MCS)** where charged particles interact electromagnetically with the nuclei and electrons of materials like thin foils or collimators. MCS causes particles to deviate from their original path, forming a diffuse halo. The root-mean-square (RMS) scattering angle, \( \theta_0 \), is given by the Highland formula:
+Beam halos primarily originate from **Multiple Coulomb Scattering (MCS)** where charged particles interact electromagnetically with the nuclei and electrons of materials like thin foils or collimators. MCS causes particles to deviate from their original path, forming a diffuse halo. The root-mean-square (RMS) scattering angle, `$ \theta_0 $`, is given by the Highland formula:
 
-When a beam hits thin foils or internal collimators, some particles are deflected at small angles, forming a scattered formation leading to halo creation.  
-The root-mean-square (RMS) scattering angle, \( \theta_0 \), is approximately given by:
+When a beam hits thin foils or internal collimators, some particles are deflected at small angles, forming a scattered formation leading to halo creation.
+The root-mean-square (RMS) scattering angle, `$ \theta_0 $`, is approximately given by:
 
-\[
+$$
 \theta_0 \approx \frac{13.6 \text{ MeV}}{\beta pc} \cdot z \cdot \sqrt{\frac{x}{X_0}} \left( 1 + 0.038 \ln{\left(\frac{x}{X_0}\right)} \right) \quad (\text{Eq. 1})
-\]
+$$
 
 Where:
-- \( \beta = \frac{v}{c} \) is the particle’s velocity normalized to the speed of light
-- \( p \) is the momentum (MeV/c)
-- \( z \) is the particle’s charge
-- \( x \) is the thickness of the material
-- \( X_0 \) is the radiation length of the material
+- `$ \beta = \frac{v}{c} $` is the particle’s velocity normalized to the speed of light
+- `$ p $` is the momentum (MeV/c)
+- `$ z $` is the particle’s charge
+- `$ x $` is the thickness of the material
+- `$ X_0 $` is the radiation length of the material
 
-This equation shows that the scattering angle depends on the particle type (via β, p, z) and material properties (x, X₀), leading to distinct halo patterns for different beams and foils.
-
+This equation shows that the scattering angle depends on the particle type (via `$ \beta, p, z $`) and material properties (`$ x, X_0 $`), leading to distinct halo patterns for different beams and foils.
 
 ---
 
