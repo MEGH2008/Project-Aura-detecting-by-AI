@@ -5,13 +5,13 @@ It documents the theoretical background, experimental planning, data simulation,
 
 ## Contents of the Repository
 
-- [1. Introduction](#-introduction)
-- [2. Scientific Background & Methodology](#-scientific-background--methodology)
-- [3. Data Generator](#-data-generator)
-- [4. Model](#-model)
-- [5. Simulation Results](#-simulation-results)
-- [6. Contingency Plan](#-contingency-plan)
-- [7. Final Note](#-final-note)
+- [1. Introduction](#introduction)
+- [2. Scientific Background & Methodology](#scientific-background--methodology)
+- [3. Data Generator](#data-generator)
+- [4. Model](#model)
+- [5. Simulation Results](#simulation-results)
+- [6. Contingency Plan](#contingency-plan)
+- [7. Final Note](#final-note)
 ---
 
 # Introduction
