@@ -54,7 +54,7 @@ $$
 $$
 
 Where:
-- $ \beta = \frac{v}{c} $ is the particle’s velocity normalized to the speed of light
+- $\beta = \frac{v}{c}$ is the particle’s velocity normalized to the speed of light
 - $ p $ is the momentum (MeV/c)
 - $ z $ is the particle’s charge
 - $ x $ is the thickness of the material
