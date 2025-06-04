@@ -257,10 +257,10 @@ Where:
 
 ## 3.4 Sample Generated Data
 
-| Event ID | S1 Time (ns) | S2 Time (ns) | DWC1 X (mm) | DWC1 Y (mm) | DWC2 X (mm) | DWC2 Y (mm) | DWC3 X (mm) | DWC3 Y (mm) | DWC4 X (mm) | DWC4 Y (mm) | Halo Q1 | Halo Q2 | Halo Q3 | Halo Q4 | Cherenkov 1 | Cherenkov 2 | CALO Energy (MeV) | Particle Type | True Energy (GeV) | Beam Stability | Halo Pattern |
-|:--------:|:------------:|:------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-------:|:-------:|:-------:|:-------:|:------------:|:------------:|:----------------:|:-------------:|:----------------:|:--------------:|:------------:|
-| 1 | 0.003 | 0.029 | 2.1 | -1.8 | 2.5 | -1.5 | 2.6 | -1.7 | 2.7 | -1.6 | 120 | 90 | 110 | 85 | 1 | 0 | 5.1 | Electron | 5.0 | Stable | Symmetric |
-| 2 | 0.002 | 0.030 | -0.5 | 1.3 | -0.7 | 1.8 | -0.8 | 1.7 | -0.9 | 1.6 | 45 | 120 | 70 | 140 | 0 | 1 | 2.8 | Pion | 8.0 | Unstable | Skewed |
+| Event ID | S1 Time (ns) | S2 Time (ns) | DWC1 X (mm) | DWC1 Y (mm) | DWC2 X (mm) | DWC2 Y (mm) | DWC3 X (mm) | DWC3 Y (mm) | DWC4 X (mm) | DWC4 Y (mm) | Halo Q1 | Halo Q2 | Halo Q3 | Halo Q4 | Cherenkov 1 | Cherenkov 2 | CALO Energy (MeV) | Particle Type | True Energy (GeV) | Beam Stability |
+|:--------:|:------------:|:------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-------:|:-------:|:-------:|:-------:|:------------:|:------------:|:----------------:|:-------------:|:----------------:|:--------------:|
+| 1 | 0.003 | 0.029 | 2.1 | -1.8 | 2.5 | -1.5 | 2.6 | -1.7 | 2.7 | -1.6 | 120 | 90 | 110 | 85 | 1 | 0 | 5.1 | Electron | 5.0 | Stable |
+| 2 | 0.002 | 0.030 | -0.5 | 1.3 | -0.7 | 1.8 | -0.8 | 1.7 | -0.9 | 1.6 | 45 | 120 | 70 | 140 | 0 | 1 | 2.8 | Pion | 8.0 | Unstable |
 
 (Only 2 sample rows shown; full dataset contains thousands of events.)
 
