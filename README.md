@@ -1,8 +1,6 @@
 
 https://github.com/user-attachments/assets/fea8ab39-7b7e-40b7-bc7b-2a4ad738a143
 
-https://github.com/user-attachments/assets/cafb7580-9b26-4fcd-bb59-94bd9a199618
-
 # Project Aura: From Noise to Insight 
 ## Comprehensive Beam Analysis Using Halo Data and Machine Learning
 
