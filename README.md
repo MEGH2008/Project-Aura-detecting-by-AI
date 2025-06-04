@@ -1,7 +1,5 @@
 
-
-https://github.com/user-attachments/assets/40672a78-8c58-49c5-8066-4b09e6caf884
-
+https://github.com/user-attachments/assets/fea8ab39-7b7e-40b7-bc7b-2a4ad738a143
 
 https://github.com/user-attachments/assets/cafb7580-9b26-4fcd-bb59-94bd9a199618
 
@@ -29,7 +27,7 @@ It documents the theoretical background, experimental planning, data simulation,
 ## 1.1 Intro
 
 In accelerator physics, beam halos are often regarded as unwanted side effects and noise — low-density peripheral particles that deviate from the dense beam core, potentially damaging equipment or polluting measurements. However, these halos are not meaningless. Their shape and intensity often encode subtle information about the beam's composition, momentum, stability, and its interaction with materials along the beamline.
-Thus Project Aura aims to enhance beam diagnostics in particle accelerators by leveraging Artificial Intelligence and Machine Learning to extract valuable information from these beam halos.  Our goal is to demonstrate that these overlooked halos can provide insights into beam stability, composition, and underlying structure; Possibly paving the way for new techniques and ways.
+Thus, Project Aura aims to enhance beam diagnostics in particle accelerators by leveraging Artificial Intelligence and Machine Learning to extract valuable information from these beam halos.  Our goal is to demonstrate that these overlooked halos can provide insights into beam stability, composition, and underlying structure; Possibly paving the way for new techniques and ways.
 
 ---
 
