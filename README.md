@@ -161,6 +161,25 @@ Where $\Delta t$ is time-of-flight, and $L$ is the distance between S1 and S2 (i
 
 ---
 
+### 2.2.5 Summary Of Experimental Setup
+
+| Position (Z \[m]) | Detector                         | Purpose                               |
+| ----------------- | -------------------------------- | ------------------------------------- |
+| 0.0               | S1 (Scintillator)                | ToF Start, Trigger Reference          |
+| 0.5               | DWC1 (Delay Wire Chamber)        | Tracking Point 1 (Pre-Target)         |
+| 1.0               | Cherenkov 1 (C1)                 | First PID (e⁻ identification)         |
+| 1.5               | DWC2 (Delay Wire Chamber)        | Tracking Point 2 (Pre-Target)         |
+| 2.25              | Target Region (Scattering Foils) | Halo Generation (C, Al, Cu foils)     |
+| 2.75 (Optional)   | Dipole Magnet                    | Momentum Selection (if enabled)       |
+| 3.0               | Halo Detector (4-Quadrant Array) | Halo Angular Distribution Measurement |
+| 3.5               | DWC3 (Delay Wire Chamber)        | Tracking Point 3 (Post-Halo)          |
+| 4.0               | Cherenkov 2 (C2)                 | Secondary PID (π/µ separation)        |
+| 4.5               | DWC4 (Delay Wire Chamber)        | Tracking Point 4 (Post-Halo)          |
+| 5.0               | S2 (Scintillator)                | ToF Stop, Timing Endpoint             |
+| 5.5               | CALO (Lead Glass Calorimeter)    | Energy Measurement                    |
+
+---
+
 # Data Generator
 
 ---
